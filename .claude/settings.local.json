@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(taskkill /PID 32396 /F)",
+      "Bash(taskkill /PID 33488 /F)",
+      "PowerShell(Stop-Process *)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}
