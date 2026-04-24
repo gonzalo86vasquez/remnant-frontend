@@ -167,8 +167,6 @@ function TabC() {
   )
 }
 
-const tabContent = { a: <TabA />, b: <TabB />, c: <TabC /> }
-
 export function DashboardLayout() {
   const [activeTab, setActiveTab] = useState<'a' | 'b' | 'c'>('a')
   const activeTabInfo = TABS.find(t => t.id === activeTab)!
@@ -217,7 +215,9 @@ export function DashboardLayout() {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
           >
-            {tabContent[activeTab]}
+            {activeTab === 'a' && <TabA />}
+            {activeTab === 'b' && <TabB />}
+            {activeTab === 'c' && <TabC />}
           </motion.div>
         </AnimatePresence>
       </div>
