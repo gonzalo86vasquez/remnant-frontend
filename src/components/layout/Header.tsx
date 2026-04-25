@@ -16,7 +16,7 @@ export function Header() {
   const crumbs = BREADCRUMBS[location.pathname] ?? ['Inicio']
 
   return (
-    <header className="w-full sticky top-0 z-40 flex h-14 items-center border-b border-border bg-background/95 px-5 backdrop-blur">
+    <header className="w-full sticky top-0 z-40 flex h-14 items-center border-b border-border bg-background px-5">
       {/* Breadcrumb — ocupa todo el espacio disponible */}
       <nav className="flex flex-1 items-center gap-1.5 text-sm min-w-0 mr-4">
         <span className="text-muted-foreground shrink-0">Remnant</span>
