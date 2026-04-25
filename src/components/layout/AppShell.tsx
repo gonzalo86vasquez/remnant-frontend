@@ -7,6 +7,9 @@ import { Header } from './Header'
 import { PageTransition } from '@/components/common/PageTransition'
 import { ThemeToggle } from '@/components/common/ThemeToggle'
 
+// PageTransition uses key to remount on route change, triggering fade-in
+// AnimatePresence is only kept for the mobile drawer overlay
+
 export function AppShell() {
   const location = useLocation()
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -67,11 +70,9 @@ export function AppShell() {
         </div>
 
         <main className="flex-1 overflow-hidden">
-          <AnimatePresence mode="wait">
-            <PageTransition key={location.pathname}>
-              <Outlet />
-            </PageTransition>
-          </AnimatePresence>
+          <PageTransition key={location.pathname}>
+            <Outlet />
+          </PageTransition>
         </main>
       </div>
     </div>
