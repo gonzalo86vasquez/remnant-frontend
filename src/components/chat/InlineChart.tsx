@@ -28,6 +28,8 @@ interface Props {
 export function InlineChart({ data, height = 180 }: Props) {
   const colors = data.colors ?? DEFAULT_COLORS
 
+  if (!data.data?.length || !data.dataKeys?.length) return null
+
   if (data.type === 'bar') {
     return (
       <div className="mt-3 rounded-lg border border-border bg-background/50 p-3">

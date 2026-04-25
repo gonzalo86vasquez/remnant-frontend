@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ChartCard } from './ChartCard'
 import { WaterfallEspesor } from './group-a/WaterfallEspesor'
 import { GaugesVidaRemanente } from './group-a/GaugesVidaRemanente'
@@ -207,19 +207,16 @@ export function DashboardLayout() {
 
       {/* Charts grid */}
       <div className="flex-1 overflow-y-auto p-4">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
-          >
-            {activeTab === 'a' && <TabA />}
-            {activeTab === 'b' && <TabB />}
-            {activeTab === 'c' && <TabC />}
-          </motion.div>
-        </AnimatePresence>
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.15 }}
+        >
+          {activeTab === 'a' && <TabA />}
+          {activeTab === 'b' && <TabB />}
+          {activeTab === 'c' && <TabC />}
+        </motion.div>
       </div>
     </div>
   )

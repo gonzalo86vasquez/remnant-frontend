@@ -2,7 +2,13 @@ import { motion } from 'framer-motion'
 
 export function TypingIndicator() {
   return (
-    <div className="flex items-start gap-3">
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 8 }}
+      transition={{ duration: 0.15 }}
+      className="flex items-start gap-3"
+    >
       <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10">
         <span className="text-[10px] font-bold text-primary">AI</span>
       </div>
@@ -16,6 +22,6 @@ export function TypingIndicator() {
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }
