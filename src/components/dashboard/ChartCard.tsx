@@ -13,8 +13,7 @@ export function ChartCard({ title, subtitle, children, className, priority = 'hi
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.05 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, ease: 'easeOut' }}
       className={cn(
         'flex flex-col rounded-lg border border-border bg-card shadow-sm overflow-hidden',
